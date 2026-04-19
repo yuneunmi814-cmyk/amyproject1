@@ -4,7 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-adsense-account" content="ca-pub-1166438034048593">
-  <title>나는 강아지상? 고양이상? 동물상 테스트</title>
+  <meta name="description" content="AI가 내 사진을 분석해 강아지상인지 고양이상인지 알려줍니다. 사진 업로드 또는 웹캠으로 무료 동물상 테스트!">
+  <meta property="og:title" content="동물상 테스트 - AI가 분석하는 강아지상 고양이상">
+  <meta property="og:description" content="사진을 업로드하면 AI가 당신의 동물상을 분석해드립니다. 무료로 이용하세요!">
+  <meta property="og:type" content="website">
+  <title>동물상 테스트 - AI가 분석하는 강아지상 고양이상 | ProjectYoon</title>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1166438034048593" crossorigin="anonymous"></script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -245,9 +249,113 @@
     }
     .retry-btn:hover { transform: translateY(-2px); border-color: #7c3aed; }
 
+    .ad-wrap {
+      margin: 28px 0;
+      text-align: center;
+      min-height: 100px;
+    }
+
+    .content-section {
+      margin-top: 40px;
+      border-top: 1px solid var(--card-border);
+      padding-top: 36px;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin: 0 0 20px;
+      text-align: center;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .info-card {
+      background: var(--card-bg);
+      border: 1.5px solid var(--card-border);
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    .info-card h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin: 0 0 10px;
+    }
+
+    .info-card p {
+      font-size: 0.87rem;
+      color: var(--subtext);
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    .faq-list {
+      background: var(--card-bg);
+      border: 1.5px solid var(--card-border);
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .faq-list h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin: 0 0 14px;
+    }
+
+    .faq-item {
+      margin-bottom: 14px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .faq-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-size: 0.88rem;
+      margin-bottom: 5px;
+    }
+
+    .faq-item p {
+      font-size: 0.87rem;
+      color: var(--subtext);
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    .site-footer {
+      margin-top: 40px;
+      padding-top: 22px;
+      border-top: 1px solid var(--card-border);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .site-footer a {
+      color: var(--subtext);
+      text-decoration: none;
+      font-size: 0.87rem;
+      transition: color 0.2s;
+    }
+
+    .site-footer a:hover { color: #7c3aed; }
+
     @media (max-width: 480px) {
       .container { padding: 28px 20px; }
       .hero h1 { font-size: 1.6rem; }
+      .info-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -257,7 +365,7 @@
     <a href="index.html" style="text-decoration:none;">
       <button class="theme-toggle">🎰 로또 추천기</button>
     </a>
-    <button class="theme-toggle" onclick="toggleTheme()">🌙 다크 모드</button>
+    <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()">🌙 다크 모드</button>
   </div>
 
   <div class="hero">
@@ -308,17 +416,55 @@
       <h3 id="resultCardTitle"></h3>
       <p id="resultCardDesc"></p>
     </div>
-    <div style="margin-top:20px; text-align:center;">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-1166438034048593"
-           data-ad-slot="auto"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
     <button class="retry-btn" onclick="reset()">🔄 다시 테스트하기</button>
   </div>
+
+  <!-- 광고 단위: AdSense 대시보드에서 광고 단위 생성 후 data-ad-slot 값을 입력하세요 -->
+  <div class="ad-wrap">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-1166438034048593"
+         data-ad-slot="XXXXXXXXXX"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <section class="content-section">
+    <h2 class="section-title">동물상이란?</h2>
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>🐶 강아지상 특징</h3>
+        <p>둥글고 큰 눈, 올라간 눈꼬리, 귀엽고 친근한 인상이 특징입니다. 밝고 활발한 이미지로 처음 만나는 사람에게도 편안한 느낌을 줍니다. 충성스럽고 따뜻한 분위기가 강점입니다.</p>
+      </div>
+      <div class="info-card">
+        <h3>🐱 고양이상 특징</h3>
+        <p>아몬드형의 선명한 눈, 또렷한 눈매, 시크하고 세련된 인상이 특징입니다. 독립적이고 미스터리한 매력으로 주변의 시선을 사로잡으며, 차분하고 우아한 분위기가 강점입니다.</p>
+      </div>
+    </div>
+    <div class="faq-list">
+      <h3>자주 묻는 질문</h3>
+      <div class="faq-item">
+        <strong>Q. AI 분석은 어떻게 작동하나요?</strong>
+        <p>Google Teachable Machine의 딥러닝 모델을 사용합니다. 업로드한 이미지에서 얼굴 특징을 추출하여 강아지상과 고양이상의 유사도를 퍼센트로 계산합니다. 분석은 브라우저 내에서만 처리됩니다.</p>
+      </div>
+      <div class="faq-item">
+        <strong>Q. 제 사진이 저장되나요?</strong>
+        <p>아니요. 업로드한 사진은 브라우저 내에서만 처리되며, 서버로 전송되거나 저장되지 않습니다. 페이지를 새로고침하면 이미지 데이터는 완전히 사라집니다.</p>
+      </div>
+      <div class="faq-item">
+        <strong>Q. 결과가 항상 정확한가요?</strong>
+        <p>AI 분석은 재미 목적의 참고 결과입니다. 조명, 각도, 표정에 따라 결과가 달라질 수 있습니다. 정면 얼굴 사진을 사용하면 더 일관된 결과를 얻을 수 있어요!</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <a href="index.html">🎰 로또 번호 추천기</a>
+    <a href="about.html">사이트 소개</a>
+    <a href="privacy.html">개인정보처리방침</a>
+    <a href="mailto:yuneunmi814@gmail.com">문의하기</a>
+  </footer>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
@@ -488,7 +634,7 @@
 
   function toggleTheme() {
     const html = document.documentElement;
-    const btn = document.querySelector('.theme-toggle');
+    const btn = document.getElementById('themeBtn');
     if (html.getAttribute('data-theme') === 'light') {
       html.setAttribute('data-theme', 'dark');
       btn.textContent = '☀️ 화이트 모드';
